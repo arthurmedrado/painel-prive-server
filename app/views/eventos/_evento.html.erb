@@ -1,0 +1,21 @@
+<div id="evento:<%= evento.id %>" class="col-xs-12 col-sm-4 evento-item" data-id="<%= evento.id %>" data-titulo="<%= evento.titulo %>" data-data="<%= evento.data %>" data-telefone="<%= evento.telefone %>" data-email="<%= evento.email %>" data-site="<%= evento.site %>" data-longitude="<%= evento.longitude %>" data-latitude="<%= evento.latitude %>" data-descricao="<%= evento.descricao %>">
+  <p> <%= evento.titulo %> </p>
+  <p class="small truncate">
+    <%= evento.data.strftime('%d/%m/%Y') %>
+  </p>
+  <p class="small"> <%= evento.telefone %> </p>
+  <p class="small"> <%= evento.email %> </p>
+  <p class="small">
+    <%= link_to 'Site', evento.site, target: '_blank' %>
+  </p>
+  <p class="small">
+    <%= link_to "Localização: #{evento.latitude}, #{evento.longitude}", "https://www.google.com.br/maps/search/#{evento.latitude},#{evento.longitude}", target: '_blank' %>
+  </p>
+  <p class="small truncate">
+    <%= simple_format evento.descricao %>
+  </p>
+  <div class="actions">
+    <button class="pull-right btn btn-danger destroy"> Excluir </button>
+    <button class="pull-left btn btn-primary update"> Editar </button>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div id="parceiro:<%= parceiro.id %>" class="col-xs-12 col-sm-4 parceiro-item" data-id="<%= parceiro.id %>" data-name="<%= parceiro.name %>" data-telefone="<%= parceiro.telefone %>" data-site="<%= parceiro.site %>" data-longitude="<%= parceiro.longitude %>" data-latitude="<%= parceiro.latitude %>" data-descricaomapa="<%= parceiro.descricaoMapa %>" data-descricao1="<%= parceiro.descricao1 %>" data-descricao2="<%= parceiro.descricao2 %>"  data-descricao3="<%= parceiro.descricao3 %>" data-imagem="<%= parceiro.imagem %>">
+  <p> <%= parceiro.name %> </p>
+  <p class="small"> <%= parceiro.telefone %> </p>
+  <p class="small">
+    <%= link_to 'Site', parceiro.site, target: '_blank' %>
+  </p>
+  <p class="small">
+    <%= link_to "Localização: #{parceiro.latitude}, #{parceiro.longitude}", "https://www.google.com.br/maps/search/#{parceiro.latitude},#{parceiro.longitude}", target: '_blank' %>
+  </p>
+  <p class="small">
+    <%= link_to 'Imagem', parceiro.imagem, target: '_blank' %>
+  </p>
+  <p class="small">
+    <%= parceiro.descricaoMapa %>
+  </p>
+  <p class="small">
+    <%= parceiro.descricao1 %>
+  </p>
+  <p class="small">
+    <%= parceiro.descricao2 %>
+  </p>
+  <p class="small">
+    <%= parceiro.descricao3 %>
+  </p>
+
+  <div class="actions">
+    <button class="pull-right btn btn-danger destroy"> Excluir </button>
+    <button class="pull-left btn btn-primary update"> Editar </button>
+  </div>
+</div>

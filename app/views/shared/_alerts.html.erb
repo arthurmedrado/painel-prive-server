@@ -1,0 +1,11 @@
+<div class="alerts">
+  <% unless flash[:notice].nil? %>
+    <% flash[:notice].map(&:with_indifferent_access).each do |flash| -%>
+      <div class="alert alert-<%= flash[:style] %> alert-dismissible text-center fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong><%= flash[:header] %></strong> <%= flash[:message].html_safe %>
+      </div>
+    <% end -%>
+    <% flash[:notice] = nil %>
+  <% end -%>
+</div>

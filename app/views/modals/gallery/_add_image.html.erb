@@ -1,0 +1,41 @@
+<div id="addGalleryImage" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addGalleryImageLabel" data-keyboard="false">
+  <%= form_tag add_image_path, method: :post, remote: true, class: 'center-block float-label' do -%>
+    <fieldset>
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="-1">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="addGalleryImageLabel"> Adicionar imagem </h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="form-group has-float-label">
+                  <div class="upload">
+                    <div class="dragndrop">
+                      <a>
+                        <span>Fazer upload</span>
+                      </a>
+                      <div class="loading"></div>
+                      <input id="fileupload" type="file" name="image" data-url="<%= upload_image_path %>" class="hidden">
+                      <%= hidden_field_tag :'gallery-id', '' %>
+                      <%= hidden_field_tag :'image-url', '', class: 'image-url' %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal"> Cancelar </button>
+            <%= button_tag class: 'btn btn-primary ladda-button submit pull-right', data: { style: 'zoom-in' } do %>
+              <span class="ladda-label"> Adicionar </span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  <% end -%>
+</div>

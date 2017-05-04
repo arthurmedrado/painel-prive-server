@@ -1,0 +1,34 @@
+// Place all the styles related to the Mural controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-item {
+  margin-bottom: 5px;
+  
+  @include element-item(#d9d9d9, 0, 5px, 10px, 10px, 4px);
+  
+  .profile {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 75px;
+    height: 75px;
+    float: left;
+    margin-right: -75px;
+    border-bottom-right-radius: 50%;
+    border-top-left-radius: 4px;
+    margin-top: -1px;
+    margin-left: -6px;
+    box-shadow: 5px 0 5px -5px #333;
+  }
+  
+  .text {
+    float: left;
+    margin-left: 75px;
+    padding: 10px;
+    
+    .name {
+      font-size: 20px;
+    }
+  }
+}

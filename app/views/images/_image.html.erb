@@ -1,0 +1,10 @@
+<div id="image:<%= image.id %>" class="col-xs-12 col-sm-4 image">
+  <%= link_to image.url do %>
+    <%= image_tag image.url %>
+  <% end %>
+  
+  <button class="btn btn-block btn-danger destroy" type="button" data-toggle="modal" data-target="#destroyImage" data-image-id="<%= image.id %>">
+    Remover
+    <span class="glyphicon glyphicon-trash"></span>
+  </button>
+</div>

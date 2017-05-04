@@ -1,0 +1,54 @@
+<div id="galerias" class="row">
+  <div class="col-xs-12">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+          <a href="#parques" aria-controls="home" role="tab" data-toggle="tab">Parques</a>
+        </li>
+        <li role="presentation">
+          <a href="#hoteis" aria-controls="profile" role="tab" data-toggle="tab">Hotéis</a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="parques">
+          <div class="row">
+            <div class="col-xs-12">
+              <h4>
+                Galeria de parques
+                <button class="pull-right btn btn-primary" type="button" data-toggle="modal" data-target="#addGallery" data-category="parque"> Adicionar parque </button>
+              </h4>
+            </div>
+            
+            <% @parques.each do |parque| %>
+              <%= render partial: 'galeries/parque', locals: { parque: parque } %>
+            <% end %>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="hoteis">
+          <div class="row">
+            <div class="col-xs-12">
+              <h4>
+                Galeria de Hoteis
+                <button class="pull-right btn btn-primary" type="button" data-toggle="modal" data-target="#addGallery" data-category="hotel"> Adicionar hotel </button>
+              </h4>
+            </div>
+            
+            <% @hoteis.each do |hotel| %>
+              <%= render partial: 'galeries/hotel', locals: { hotel: hotel } %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<% content_for :modal do %>
+  <%= render partial: 'modals/gallery/add_gallery' %>
+  <%= render partial: 'modals/gallery/edit_gallery' %>
+  <%= render partial: 'modals/gallery/remove_gallery' %>
+  
+  <%= render partial: 'modals/gallery/add_image' %>
+  <%= render partial: 'modals/gallery/remove_image' %>
+<% end %>

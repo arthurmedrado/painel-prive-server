@@ -1,0 +1,34 @@
+<div id="editGalleryTitle" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="editGalleryTitleLabel" data-keyboard="false">
+  <%= form_tag galerias_path, method: :put, remote: true, class: 'center-block float-label' do -%>
+    <%= hidden_field_tag :gallery_id, nil, id: 'gallery-id' %>
+    <fieldset>
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="-1">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="editGalleryTitleLabel"> Editar galeria </h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="form-group has-float-label">
+                  <%= text_field_tag :title, nil, class: 'form-control', placeholder: ' ' %>
+                  <%= label_tag :title, 'Titulo', class: 'control-label' %>
+                  <span class="help-block"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal"> Descartar </button>
+            <%= button_tag class: 'btn btn-primary ladda-button submit', data: { style: 'zoom-in' } do %>
+              <span class="ladda-label"> Salvar alterações </span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  <% end -%>
+</div>

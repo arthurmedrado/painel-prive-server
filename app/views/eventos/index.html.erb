@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h4>
+      Eventos
+      <button class="pull-right btn btn-primary" type="button" data-toggle="modal" data-target="#createEvento"> Novo </button>
+    </h4>
+  </div>
+</div>
+
+<div id="eventos" class="row">
+  <% cache @eventos do %>
+    <%= render @eventos %>
+  <% end %>
+</div>
+
+<% content_for :modal do %>
+  <%= render partial: 'modals/evento/create' %>
+  <%= render partial: 'modals/evento/edit' %>
+  <%= render partial: 'modals/evento/destroy' %>
+<% end %>

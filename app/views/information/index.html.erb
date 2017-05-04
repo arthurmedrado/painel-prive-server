@@ -1,0 +1,110 @@
+<div class="row">
+  <%= form_tag update_information_path, method: :put, remote: true, id: 'update_information', class: 'float-label' do -%>
+    <fieldset>
+      <div class="col-xs-12">
+        <div class="form-group has-float-label">
+          <%= text_field_tag :'phone-global', @phoneGlobal, class: 'form-control', placeholder: ' ' %>
+          <%= label_tag :'phone-global', 'Telefone global', class: 'control-label' %>
+          <span class="help-block"></span>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="form-group has-float-label">
+          <%= text_field_tag :'facebook-global', @facebookGlobal, class: 'form-control', placeholder: ' ' %>
+          <%= label_tag :'facebook-global', 'Facebook global', class: 'control-label' %>
+          <span class="help-block"></span>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="form-group has-float-label">
+          <%= text_field_tag :'instagram-global', @instagramGlobal, class: 'form-control', placeholder: ' ' %>
+          <%= label_tag :'instagram-global', 'Instagram global', class: 'control-label' %>
+          <span class="help-block"></span>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="form-group has-float-label">
+          <%= text_field_tag :'website-global', @websiteGlobal, class: 'form-control', placeholder: ' ' %>
+          <%= label_tag :'website-global', 'Website global', class: 'control-label' %>
+          <span class="help-block"></span>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="form-group has-float-label">
+          <%= text_field_tag :'contato-email-global', @contatoEmailGlobal, class: 'form-control', placeholder: ' ' %>
+          <%= label_tag :'contato-email-global', 'Contato email global', class: 'control-label' %>
+          <span class="help-block"></span>
+        </div>
+      </div>
+      
+      <div class="col-xs-12">
+        <div class="form-group has-float-label">
+          <%= text_field_tag :youtube, @youtubePlaylist, class: 'form-control', placeholder: ' ' %>
+          <%= label_tag :youtube, 'Playlist do youtube', class: 'control-label' %>
+          <span class="help-block"></span>
+        </div>
+      </div>
+      <div id="pensoes" class="col-sm-6 col-xs-12">
+        <div class="form-group has-float-label">
+          <div class="input-group">
+            <%= text_field_tag :'pensao-tipo-field', params[:'pensao-tipo-field'], class: 'form-control', placeholder: ' ' %>
+            <%= label_tag :'pensao-tipo-field', 'Adicionar tipo de pensão', class: 'control-label' %>
+            <span class="input-group-btn">
+              <button class="btn btn-default add" type="button">
+                <span class="glyphicon glyphicon-plus"></span>
+              </button>
+            </span>
+          </div>
+          <span class="help-block"></span>
+        </div>
+        <script id="template:pensao" type="text/x-jsrender">
+          <li class="to-create">
+            {{:name}}
+            <button type="button" class="close" tabindex="-1"><span>&times;</span></button>
+            <%= hidden_field_tag :'pensao-tipo[][id]', '' %>
+            <%= hidden_field_tag :'pensao-tipo[][name]', '{{:name}}' %>
+            <%= hidden_field_tag :'pensao-tipo[][destroy]', false %>
+          </li>
+        </script>
+        <ul>
+          <%= render partial: 'information/pensao-list' %>
+        </ul>
+      </div>
+      <div id="hoteis" class="col-sm-6 col-xs-12">
+        <div class="form-group has-float-label">
+          <div class="input-group">
+            <%= text_field_tag :'hoteis-nome-field', params[:'hoteis-nome-field'], class: 'form-control', placeholder: ' ' %>
+            <%= label_tag :'hoteis-nome-field', 'Adicionar hotel', class: 'control-label' %>
+            <span class="input-group-btn">
+              <button class="btn btn-default add" type="button">
+                <span class="glyphicon glyphicon-plus"></span>
+              </button>
+            </span>
+          </div>
+          <span class="help-block"></span>
+        </div>
+        <script id="template:hotel" type="text/x-jsrender">
+          <li class="to-create">
+            {{:name}}
+            <button type="button" class="close" tabindex="-1"><span>&times;</span></button>
+            <%= hidden_field_tag :'hoteis-nome[][id]', '' %>
+            <%= hidden_field_tag :'hoteis-nome[][name]', '{{:name}}' %>
+            <%= hidden_field_tag :'hoteis-nome[][destroy]', false %>
+          </li>
+        </script>
+        <ul>
+          <%= render partial: 'information/hotel-list' %>
+        </ul>
+      </div>
+      
+      <div class="col-xs-12">
+        <div class="form-group clearfix text-right">
+          <%= button_tag class: 'btn ladda-button submit', data: { style: 'zoom-in' } do %>
+            <span class="ladda-label"> Salvar alterações </span>
+          <% end %>
+        </div>
+      </div>
+    </fieldset>
+  <% end -%>
+  
+</div>

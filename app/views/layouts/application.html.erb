@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    
+    <title> <%= pagetitle %> </title>
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="<%= 'loggedout' if current_admin.nil? %>">
+    <%= render partial: 'shared/analytics' %>
+    
+    <input type="checkbox" id="show-menu">
+    <%= render partial: 'application/header' %>
+    <div id="canvas">
+      <%= render partial: 'application/menu' %>
+      <div class="content container-fluid">
+        <%= yield %>
+      </div>
+    </div>
+    <%= render partial: 'shared/alerts' %>
+    <%= yield :modal %>
+  </body>
+</html>

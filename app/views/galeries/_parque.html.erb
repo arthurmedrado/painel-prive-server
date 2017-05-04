@@ -1,0 +1,29 @@
+<div class="col-sm-4 col-xs-12 gallery" id="galeria:<%= parque.id %>">
+  <h4> <%= parque.title %> </h4>
+  <div class="btn-group btn-group-justified" role="group">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#openGallery-<%= parque.id %>" data-gallery-id="<%= parque.id %>">
+        <span class="glyphicon glyphicon glyphicon-fullscreen"></span>
+      </button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addGalleryImage" data-gallery-id="<%= parque.id %>">
+        <span class="glyphicon glyphicon-cloud-upload"></span>
+      </button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editGalleryTitle" data-gallery-id="<%= parque.id %>" data-gallery-title="<%= parque.title %>">
+        <span class="glyphicon glyphicon-pencil"></span>
+      </button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#removeGallery" data-gallery-id="<%= parque.id %>">
+        <span class="glyphicon glyphicon-trash"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<% content_for :modal do %>
+  <%= render partial: 'modals/gallery/gallery_modal', locals: { gallery: parque } %>
+<% end %>

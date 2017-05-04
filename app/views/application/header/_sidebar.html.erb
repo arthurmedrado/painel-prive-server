@@ -1,0 +1,13 @@
+<% unless current_admin.nil? %>
+  <div class="sidebar">
+    <%= render partial: 'application/header/logo' %>
+    <div class="open-menu">
+      <label class="hamburguer" for="show-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+  </div>
+<% end %>

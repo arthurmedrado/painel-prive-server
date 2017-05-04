@@ -1,0 +1,37 @@
+@import 'common/theme';
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+$default-font: 'Open Sans', sans-serif;
+
+$container-max-width: 910px;
+
+
+
+$default-background-color: $dark-white;
+$default-text-color: $light-gray;
+
+$dropdown-menu-item-text-color: $light-gray;
+$dropdown-menu-colapsed-item-text-color: $white;
+
+$link-danger-color: red;
+
+// TODO: Arrumar as variaveis daqui pra baixo
+
+$text-color: $light-blue;
+
+
+
+$footer-text-color: $white;
+
+$header-bg-dark: $footer-bg-light;
+
+$header-active-link-bg: #1a1a1a;
+$header-hover-link-bg: darken($header-active-link-bg, 10%);
+
+$header-active-link-color: $white;
+$header-hover-link-color: $white;
+
+$plans-border-color: #303030;
+
+$sidebar-width: 250px;
+$logo-height: 120px;

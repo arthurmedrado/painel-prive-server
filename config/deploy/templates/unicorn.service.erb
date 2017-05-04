@@ -1,0 +1,15 @@
+[Unit]
+Description=Unicorn server
+
+[Service]
+SyslogIdentifier=unicorn
+User=deployer
+PIDFile=<%= fetch(:shared_path) %>/tmp/pids/unicorn.pid
+WorkingDirectory=<%= fetch(:current_path) %>
+
+ExecStart=/home/deployer/.rbenv/shims/bundle exec "unicorn -c <%= fetch(:shared_path) %>/config/unicorn.rb -E production"
+ExecReload=/bin/kill -s USR2 $MAINPID
+ExecStop=/bin/kill -s QUIT $MAINPID
+
+[Install]
+WantedBy=multi-user.target

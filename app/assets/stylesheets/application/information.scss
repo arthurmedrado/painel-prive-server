@@ -1,0 +1,26 @@
+// Place all the styles related to the information controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  
+  #pensoes, #hoteis {
+    
+    ul {
+      list-style: none;
+      padding: 0 10px;
+      
+      li {
+        height: 22px;
+      
+        &.to-destroy {
+          text-decoration: line-through;
+        }
+    
+        &.to-create {
+          color: green;
+        }
+      }
+    }
+  }
+}

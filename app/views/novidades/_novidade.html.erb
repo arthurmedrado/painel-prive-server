@@ -1,0 +1,8 @@
+<div id="novidade:<%= novidade.id %>" class="col-xs-12 col-sm-4 novidade-item" data-id="<%= novidade.id %>" data-name="<%= novidade.name %>" data-descricao="<%= novidade.descricao %>" data-categoria="<%= novidade.categoria %>">
+  <p class="truncate"> <%= novidade.name %> </p>
+  <div> <%= simple_format novidade.descricao %> </div>
+  <div class="actions">
+    <button class="pull-right btn btn-danger destroy"> Excluir </button>
+    <button class="pull-left btn btn-primary update"> Editar </button>
+  </div>
+</div>

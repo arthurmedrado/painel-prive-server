@@ -1,0 +1,57 @@
+// Place all the styles related to mixins here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin element-item($background-color, $top, $bottom, $left, $right, $radius) {
+  &:before {
+    content: ' ';
+    position: absolute;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+    z-index: -1;
+    border-radius: $radius;
+    background-color: $background-color;
+  }
+}
+
+@mixin screen-small {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin screen-large {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin bootstrao-button($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: darken($background, 10%);
+        border-color: darken($border, 25%);
+  }
+  &:hover {
+    color: $color;
+    background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $background;
+          border-color: $border;
+    }
+  }
+}

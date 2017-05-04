@@ -1,0 +1,76 @@
+<div id="galerias" class="row">
+  <div class="col-xs-12">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation">
+          <a href="#pushes" aria-controls="profile" role="tab" data-toggle="tab"> Notificações </a>
+        </li>
+        <li role="presentation" class="active">
+          <a href="#promocoes" aria-controls="home" role="tab" data-toggle="tab"> Promoções </a>
+        </li>
+        <li role="presentation">
+          <a href="#gastronomia" aria-controls="profile" role="tab" data-toggle="tab"> Gastronomia </a>
+        </li>
+        <li role="presentation">
+          <a href="#programacao" aria-controls="profile" role="tab" data-toggle="tab"> Programação </a>
+        </li>
+      </ul>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade" id="pushes">
+          <div class="row">
+            <div class="col-xs-12">
+              <h4>
+                Notificações
+                <button class="pull-right btn btn-primary" type="button" data-toggle="modal" data-target="#createPush"> Nova </button>
+              </h4>
+            </div>
+            <%= render @pushes %>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in active" id="promocoes">
+          <div class="row">
+            <div class="col-xs-12">
+              <h4>
+                Promoções
+                <button class="pull-right btn btn-primary" type="button" data-toggle="modal" data-target="#createNovidade" data-category="promocao"> Nova </button>
+              </h4>
+            </div>
+            <%= render @promocoes %>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="gastronomia">
+          <div class="row">
+            <div class="col-xs-12">
+              <h4>
+                Gastronomia
+                <button class="pull-right btn btn-primary" type="button" data-toggle="modal" data-target="#createNovidade" data-category="gastronomia"> Nova </button>
+              </h4>
+            </div>
+            <%= render @gastronomia %>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="programacao">
+          <div class="row">
+            <div class="col-xs-12">
+              <h4>
+                Programações
+                <button class="pull-right btn btn-primary" type="button" data-toggle="modal" data-target="#createNovidade" data-category="programacao"> Nova </button>
+              </h4>
+            </div>
+            <%= render @programacao %>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<% content_for :modal do %>
+<!-- createPush -->
+  <%= render partial: 'modals/push/create' %>
+  <%= render partial: 'modals/push/destroy' %>
+  
+  <%= render partial: 'modals/novidade/create' %>
+  <%= render partial: 'modals/novidade/edit' %>
+  <%= render partial: 'modals/novidade/destroy' %>
+<% end %>

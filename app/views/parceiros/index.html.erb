@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h4>
+      Parceiros
+      <button class="pull-right btn btn-primary" type="button" data-toggle="modal" data-target="#createParceiro"> Novo </button>
+    </h4>
+  </div>
+</div>
+
+<div id="parceiros" class="row">
+  <% cache @parceiros do %>
+    <%= render @parceiros %>
+  <% end %>
+</div>
+
+<% content_for :modal do %>
+  <%= render partial: 'modals/parceiro/create' %>
+  <%= render partial: 'modals/parceiro/edit' %>
+  <%= render partial: 'modals/parceiro/destroy' %>
+<% end %>

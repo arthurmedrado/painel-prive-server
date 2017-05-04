@@ -1,0 +1,36 @@
+<% unless current_admin.nil? %>
+  <div id="nav" class="sidebar">
+    <ul class="site-menu">
+      <li class="<%= 'active' if current_page?(root_path) %>">
+        <%= link_to 'Informações', root_path %>
+      </li>
+      <li class="<%= 'active' if current_page?(fidelidade_path) %>">
+        <%= link_to 'Fidelidade', fidelidade_path %>
+      </li>
+      <li class="<%= 'active' if current_page?(novidades_path) %>">
+        <%= link_to 'Novidades', novidades_path %>
+      </li>
+      <li class="<%= 'active' if current_page?(eventos_path) %>">
+        <%= link_to 'Eventos', eventos_path %>
+      </li>
+      <li class="<%= 'active' if current_page?(galerias_path) %>">
+        <%= link_to 'Galerias', galerias_path %>
+      </li>
+      <li class="<%= 'active' if current_page?(parceiros_path) %>">
+        <%= link_to 'Parceiros', parceiros_path %>
+      </li>
+      <li class="<%= 'active' if current_page?(mural_path) %>">
+        <%= link_to 'Mural', mural_path %>
+      </li>
+
+      <li class="copy">
+        <%= link_to developed_by_url, target: '_blank' do %>
+          <span>Desenvolvido por</span>
+          <%= image_tag 'logo.anfeli.png' %>
+        <% end %>
+      </li>
+
+    </ul>
+  </div>
+  <label for="show-menu" class="mask"></label>
+<% end %>

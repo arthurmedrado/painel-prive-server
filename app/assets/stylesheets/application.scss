@@ -1,0 +1,36 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require bootstrap/dist/css/bootstrap
+ *= require common/fonts/glyphicons
+ *= require bootstrap-float-label/dist/bootstrap-float-label
+ *= require ladda-bootstrap/dist/ladda-themeless
+ *= require sweetalert2/dist/sweetalert2
+ *= require highcharts/css/highcharts
+ *= require magnific-popup/dist/magnific-popup
+ */
+
+@import 'common/variables';
+@import 'common/mixins';
+
+@import 'application/base';
+@import 'application/layout';
+
+@import 'application/sessions';
+
+@import 'application/information';
+@import 'application/pushes';
+@import 'application/novidades';
+@import 'application/evento';
+@import 'application/galeries';
+@import 'application/parceiros';
+@import 'application/mural';

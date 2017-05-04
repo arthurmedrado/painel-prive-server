@@ -1,0 +1,9 @@
+<% @pensoes.each do |pensao| %>
+  <li>
+    <%= pensao.value %>
+    <button type="button" class="close" tabindex="-1"><span>&times;</span></button>
+    <%= hidden_field_tag :'pensao-tipo[][id]', pensao.id %>
+    <%= hidden_field_tag :'pensao-tipo[][name]', pensao.value %>
+    <%= hidden_field_tag :'pensao-tipo[][destroy]', false %>
+  </li>
+<% end %>

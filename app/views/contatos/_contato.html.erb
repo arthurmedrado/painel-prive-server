@@ -1,0 +1,18 @@
+<div id="contato:<%= contato.id %>" class="col-xs-12 col-sm-4 contato-item" data-id="<%= contato.id %>">
+  <p class="truncate">
+    <%= contato.nome %>
+  </p>
+  <p class="small truncate">
+    <%= contato.email %>
+  </p>
+  <p class="small truncate">
+    <%= contato.telefone %>
+  </p>
+  <p class="small truncate">
+    <%= contato.descricao %>
+  </p>
+  <div class="actions">
+    <button class="pull-right btn btn-danger"> Excluir </button>
+    <button class="pull-left btn btn-primary"> Editar </button>
+  </div>
+</div>

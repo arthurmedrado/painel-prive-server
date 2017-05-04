@@ -1,0 +1,30 @@
+<div class="row login center-block">
+  <legend class="text-center">
+    <%= image_tag 'login.icon.png' %>
+  </legend>
+  <%= form_tag login_path, method: :post, id: 'login', class: 'center-block float-label' do -%>
+    <fieldset>
+      <div class="col-xs-12">
+        <div class="form-group has-float-label">
+          <%= text_field_tag :username, params[:username], class: 'form-control', placeholder: ' ' %>
+          <%= label_tag :username, 'Usuário', class: 'control-label' %>
+          <span class="help-block"></span>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="form-group has-float-label">
+          <%= password_field_tag :password, '', class: 'form-control', placeholder: '••••••••' %>
+          <%= label_tag :password, 'Senha', class: 'control-label' %>
+          <span class="help-block"></span>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="form-group clearfix text-center">
+          <%= button_tag class: 'btn ladda-button submit', data: { style: 'zoom-in' } do %>
+            <span class="ladda-label">Entrar</span>
+          <% end %>
+        </div>
+      </div>
+    </fieldset>
+  <% end -%>
+</div>

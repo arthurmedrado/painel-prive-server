@@ -1,0 +1,26 @@
+<div class="social">
+  <div class="inner-content">
+    <%= image_tag 'logo.png', class: 'logo', alt: 'Ads Channel' %>
+    <div class="links">
+      <div>
+        <h3>Redes sociais</h3>
+        <div>
+          <%= link_to 'facebook_url', target: '_blank' do %>
+            <%= image_tag 'facebook.png' %>
+          <% end %>
+          <%= link_to 'instagram_url', target: '_blank' do %>
+            <%= image_tag 'instagram.png' %>
+          <% end %>
+        </div>
+        <div class="h-separator"></div>
+      </div>
+      <div>
+        <h3>Contato</h3>
+        <div>
+          <%= link_to 'sac_email', '"mailto:#{sac_email}"', class: 'mail' %>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

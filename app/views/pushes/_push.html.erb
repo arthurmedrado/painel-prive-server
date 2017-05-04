@@ -1,0 +1,12 @@
+<div id="push:<%= push.id %>" class="col-xs-12 col-sm-4 push-item" data-id="<%= push.id %>" data-title="<%= push.title %>">
+  <p class="truncate">
+    <%= push.title %>
+  </p>
+  <div>
+    <%= simple_format push.message %>
+  </div>
+
+  <div class="actions">
+    <button class="pull-right btn btn-danger destroy"> Excluir </button>
+  </div>
+</div>

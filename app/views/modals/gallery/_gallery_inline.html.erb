@@ -1,0 +1,8 @@
+<% if gallery.title.present? %>
+  <h4> <%= gallery.title %> </h4>
+<% end %>
+<div class="gallery" id="gallery:<%= gallery.id %>">
+  <% gallery.images.each do |image| %>
+    <%= render image %>
+  <% end %>
+</div>

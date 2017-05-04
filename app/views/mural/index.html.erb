@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h4>
+      Mural
+    </h4>
+  </div>
+</div>
+
+<div id="post" class="row">
+  <% cache @posts do %>
+    <%= render @posts %>
+  <% end %>
+</div>

@@ -1,0 +1,9 @@
+<% @hoteis.each do |hotel| %>
+  <li>
+    <%= hotel.value %>
+    <button type="button" class="close" tabindex="-1"><span>&times;</span></button>
+    <%= hidden_field_tag :'hoteis-nome[][id]', hotel.id %>
+    <%= hidden_field_tag :'hoteis-nome[][name]', hotel.value %>
+    <%= hidden_field_tag :'hoteis-nome[][destroy]', false %>
+  </li>
+<% end %>

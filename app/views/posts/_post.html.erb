@@ -1,0 +1,7 @@
+<div id="post:<%= post.id %>" class="col-xs-12 post-item">
+  <div class="profile" style="background-image: url(<%= post.user.profile %>);"></div>
+  <div class="text">
+    <p class="name truncate"> <%= post.user.name %> </p>
+    <p> <%= post.message %> </p>
+  </div>
+</div>

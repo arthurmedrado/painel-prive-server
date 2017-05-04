@@ -1,0 +1,25 @@
+<div>
+  <div>
+    <h1>Contato::Contatos#index</h1>
+    <p>Find me in app/views/contatos/index.html.erb</p>
+    <p id="notice"><%= notice %></p>
+  </div>
+</div>
+
+<div class="button">
+  <button class="pull-left btn btn-primary" type="button" data-toggle="modal" data-target="#createContato"> Novo </button>
+</div>
+<br>
+<br>
+
+<div id="contatos" class="row">
+  <%# 10.times do %>
+  <% @contatos.each do |contato| %>
+    <%= render contato %>
+  <% end %>
+  <%# end %>
+</div>
+
+<%= content_for :modal do %>
+  <%= render partial: 'contatos/modals/create_contato' %>
+<% end %>

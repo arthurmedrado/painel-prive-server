@@ -1,0 +1,32 @@
+// Place all the styles related to application here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html {
+  
+  &, body {
+    height: 100%;
+    font-family: $default-font !important;
+    background-color: $default-background-color;
+    color: $default-text-color;
+  }
+}
+
+.has-float-label label::after {
+  opacity: .5;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}

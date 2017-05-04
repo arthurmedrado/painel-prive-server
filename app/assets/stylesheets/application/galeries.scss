@@ -1,0 +1,143 @@
+// Place all the styles related to the galeries here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.mfp-bg {
+  z-index: 2042;
+}
+.mfp-wrap {
+  z-index: 2043;
+}
+
+.gallery {
+  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  
+  @include element-item(#d9d9d9, 0, 5px, 5px, 5px, 4px);
+  
+  h4 {
+    margin: 10px 5px;
+  }
+  
+  .image {
+    padding: 15px 5px;
+    padding-top: 0;
+    
+    a {
+      
+      img {
+        width: 100%;
+      }
+    }
+    
+    .btn.destroy {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+}
+
+#galeria-fidelidade {
+  
+  .gallery {
+    
+    &:before {
+      content: none;
+    }
+  }
+}
+
+#addGalleryImage {
+  
+  .upload {
+    height: 200px;
+    border: 5px dashed transparent;
+    margin: 5px;
+    position: relative;
+    
+    &:hover {
+      border: 5px dashed !important;
+      cursor: pointer;
+    }
+    
+    .dragndrop {
+      position: absolute;
+      left: 5px;
+      right: 5px;
+      top: 5px;
+      bottom: 5px;
+      background-color: transparentize($black, 0.5);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      
+      &.working {
+        background-color: transparentize($black, 0.75);
+      }
+      
+      &.done {
+        background-color: transparentize($black, 0.15);
+        
+        .loading {
+          display: none;
+        }
+      }
+      
+      &.done, &.working {
+        a {
+          span {
+            display: none;
+          }
+        }
+      }
+      
+      a {
+        height: 100%;
+        width: 100%;
+        display: block;
+        color: $white;
+        text-align: center;
+        
+        &:hover {
+          text-decoration: none;
+        }
+        
+        span {
+          position: relative;
+          top: 35px;
+          font-size: 24px;
+        }
+      }
+      
+      .loading {
+        height: 3px;
+        border-radius: 6px;
+        background-color: $brand-yellow;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 0%;
+        transition: width 350ms ease-in-out;
+      }
+    }
+    
+    &.has-error {
+      
+      .dragndrop {
+        border: 2px solid;
+        border-color: #a94442;
+        -webkit-box-shadow: inset 0 1px 1px transparentize($black, (1 - 0.075));
+        box-shadow: inset 0 1px 1px transparentize($black, (1 - 0.075));
+      }
+    }
+    
+    .help-block {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2em;
+      padding: 0 15px;
+    }
+  }
+}

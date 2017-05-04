@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h4>
+      Galeria de Fidelidade
+      <button class="pull-right btn btn-primary" type="button" data-toggle="modal" data-target="#addGalleryImage" data-gallery-id="<%= @fidelidade.id %>"> Adicionar imagem </button>
+    </h4>
+  </div>
+</div>
+
+<div id="galeria-fidelidade" class="row">
+  <div class="col-xs-12">
+    <%= render partial: 'modals/gallery/gallery_inline', locals: { gallery: @fidelidade } %>
+  </div>
+</div>
+
+<% content_for :modal do %>
+  <%= render partial: 'modals/gallery/add_image' %>
+  <%= render partial: 'modals/gallery/remove_image' %>
+<% end %>

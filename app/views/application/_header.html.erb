@@ -1,0 +1,13 @@
+<div id="fixed-topbar">
+  <%= render partial: 'application/header/sidebar' %>
+  <div class="content">
+    <% if current_admin.nil? %>
+      <%= render partial: 'application/header/logo' %>
+    <% else %>
+      <p class="pull-left truncate">
+        Bem vindo <span class="strong"><%= current_admin.name %></span>
+      </p>
+      <%= link_to 'Sair', logout_path, class: 'pull-right' %>
+    <% end %>
+  </div>
+</div>

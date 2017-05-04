@@ -1,0 +1,29 @@
+<div id="destroyEvento" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="destroyEventoLabel" data-keyboard="false">
+  <%= form_tag eventos_path, method: :delete, remote: true, class: 'center-block float-label' do -%>
+    <%= hidden_field_tag :evento_id, nil, class: 'evento-id' %>
+    <fieldset>
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="destroyEventoLabel"> Atenção! Esta operação não pode ser desfeita. </h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-12">
+                <p>
+                  Você tem certeza que quer remover o evento: <span class="strong evento-name"></span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="pull-left btn btn-default" data-dismiss="modal"> Cancelar </button>
+            <%= button_tag class: 'btn btn-danger ladda-button submit', data: { style: 'zoom-in' } do %>
+              <span class="ladda-label"> Sim, tenho certeza! </span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  <% end -%>
+</div>
